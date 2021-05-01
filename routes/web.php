@@ -40,6 +40,8 @@ Route::get('/send-mail', function () {
     
     dd("Email Sent");
 });
+Route::get('admin/home', 'HomeController@admindex')->name('admin.home')->middleware('type');
+Route::get('admin/profile', 'HomeController@adminprof')->name('admin.profile')->middleware('type');
 
 Route::get('/insert','PrimaryInfo@index')->name('insertp');
 Route::post('create','PrimaryInfo@create')->name('createp');
